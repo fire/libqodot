@@ -17,10 +17,10 @@ jobs:
       fail-fast: true
       matrix:
         include:
-          - os: ubuntu-latest
-            platform: linux
-          - os: windows-latest
-            platform: windows
+          # - os: ubuntu-latest
+          #   platform: linux
+          # - os: windows-latest
+          #   platform: windows
           - os: macOS-latest
             platform: osx
 
