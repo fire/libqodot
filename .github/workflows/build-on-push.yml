@@ -33,7 +33,7 @@ jobs:
     - name: Install scons (Ubuntu)
       run: |
         sudo apt install scons
-      if: matrix.os == 'ubuntu-18.04'
+      if: matrix.os == 'ubuntu-latest'
 
     # - name: Install scons (Windows)
     #   run: |
@@ -74,7 +74,7 @@ jobs:
         name: build-files-linux
         path: |
           build/libqodot.dll
-      if: matrix.os == 'ubuntu-18.04'
+      if: matrix.os == 'ubuntu-latest'
 
     - name: Upload build files (artifacts) (macOS)    
       uses: actions/upload-artifact@v2
@@ -95,7 +95,7 @@ jobs:
   # This job collects the build output and assembles the final asset (artifact)
   asset:
     name: Assembling the asset (artifact)
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     needs: build
     if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags'))
 
