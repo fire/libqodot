@@ -26,7 +26,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
       with:
         submodules: 'recursive'    
@@ -48,13 +47,12 @@ jobs:
 
     - name: Run the build for godot-cpp
       run: |
-        cd $GITHUB_WORKSPACE/godot-cpp
+        cd godot-cpp
         scons platform=${{ matrix.platform }} -j2 target=release generate_bindings=yes bits=64
       if: matrix.os != 'windows-latest'
 
     - name: Run the build for libqodot
       run: |
-        cd $GITHUB_WORKSPACE
         scons platform=${{ matrix.platform }} -j2 target=release bits=64
       if: matrix.os != 'windows-latest'
       
