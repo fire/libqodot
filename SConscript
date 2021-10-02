@@ -5,7 +5,7 @@ Import('env')
 env = env.Clone()
 
 # Local dependency paths, adapt them to your setup
-godot_headers_path = "godot_headers/"
+godot_headers_path = "godot-cpp/godot_headers/"
 
 # make sure our binding library is properly includes
 env.Append(CPPPATH=['.', godot_headers_path])
