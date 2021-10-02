@@ -48,7 +48,7 @@ jobs:
     - name: Run the build for godot-cpp
       run: |
         cd godot-cpp
-        scons platform=${{ matrix.platform }} -j2 target=release generate_bindings=yes bits=64
+        scons platform=${{ matrix.platform }} -j2 target=release bits=64
       if: matrix.os != 'windows-latest'
 
     - name: Run the build for libqodot
@@ -59,7 +59,7 @@ jobs:
     - name: Run the build for godot-cpp (Windows)
       run: |
         cd ${env:GITHUB_WORKSPACE}/godot-cpp
-        scons platform=${{ matrix.platform }} -j2 target=release generate_bindings=yes bits=64
+        scons platform=${{ matrix.platform }} -j2 target=release bits=64
       if: matrix.os == 'windows-latest'
 
     - name: Run the build for libqodot (Windows)
