@@ -4,3 +4,6 @@
 [submodule "libmap"]
 	path = libmap
 	url = https://github.com/Shfty/libmap
+[submodule "godot-cpp"]
+	path = godot-cpp
+	url = https://github.com/godotengine/godot-cpp.git
